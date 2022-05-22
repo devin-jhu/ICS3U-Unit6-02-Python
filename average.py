@@ -2,18 +2,30 @@
 
 # Created by Devin Jhu
 # Created on May 2022
-# The counter
+# The largest number finder
 
 
 import random
 
 
+def largest(number_array):
+    # this function finds the largest number in the array
+
+    largest_number = number_array[0]
+
+    for counter in number_array:
+        if counter > largest_number:
+            largest_number = counter
+
+    return largest_number
+
+
 def main():
-    # this function finds the average of 10 random numbers
+    # this function gets 10 random numbers 
 
     number_array = []
 
-    print("The random number average finder")
+    print("The largest random number finder")
 
     # process
     for counter in range(0, 10):
@@ -21,10 +33,10 @@ def main():
         number_array.append(random_number)
         print("Random number: {}".format(random_number))
 
-    average = sum(number_array) / 10
+    largest_number = largest(number_array)
 
     # output
-    print("\nThe average is {0:.1f}.".format(average))
+    print("The largest number is {0}.".format(largest_number))
 
     print("\nDone.")
 
